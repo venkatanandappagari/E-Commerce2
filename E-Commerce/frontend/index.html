@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>ShopMart</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search products, brands, categories...">
+                <button id="search-btn">🔍</button>
+            </div>
+            <div class="header-actions">
+                <button class="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="main-container">
+            <aside class="sidebar">
+                <h3>Categories</h3>
+                <div id="categories-list"></div>
+                
+                <h3>Filters</h3>
+                <div class="filter-section">
+                    <h4>Price Range</h4>
+                    <div class="price-filter">
+                        <input type="range" id="price-min" min="0" max="1000" value="0">
+                        <input type="range" id="price-max" min="0" max="1000" value="1000">
+                        <div class="price-display">
+                            <span id="price-min-value">$0</span> - <span id="price-max-value">$1000</span>
+                        </div>
+                    </div>
+                    
+                    <h4>Rating</h4>
+                    <div class="rating-filter">
+                        <label><input type="checkbox" value="4"> 4★ & up</label>
+                        <label><input type="checkbox" value="3"> 3★ & up</label>
+                    </div>
+                </div>
+            </aside>
+            
+            <section class="products-section">
+                <div class="products-header">
+                    <h2>Products</h2>
+                    <div class="sort-options">
+                        <select id="sort-select">
+                            <option value="default">Sort by</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                            <option value="discount">Discount</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="loading">Loading products...</div>
+                <div id="products-container"></div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 E-Commerce Store. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
